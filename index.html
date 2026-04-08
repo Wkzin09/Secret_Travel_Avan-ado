@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Travel | Explore o Inexplorado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blur"></div>
+    
+    <main class="app-wrapper">
+        <section id="splash-screen" class="screen active">
+            <div class="content-box">
+                <header class="fade-in">
+                    <span class="badge">Aventura Exclusiva</span>
+                    <h1>Secret <span>Travel</span></h1>
+                    <p>Roteiros personalizados e destinos que você nunca imaginou encontrar.</p>
+                </header>
+                
+                <div class="hero-container">
+                    <div class="glow-effect"></div>
+                    <img src="globo.png" alt="Globo" class="floating-img">
+                </div>
+
+                <button type="button" class="btn-main" id="start-btn">
+                    Começar viagem <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section id="login-screen" class="screen hidden">
+            <div class="card-glass">
+                <div class="card-header">
+                    <img src="globo.png" alt="Logo" class="mini-logo">
+                    <h2>Bem-vindo</h2>
+                    <p>Acesse sua conta para continuar.</p>
+                </div>
+                
+                <form id="login-form">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-envelope icon"></i>
+                        <input type="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock icon"></i>
+                        <input type="password" placeholder="Senha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                </form>
+
+                <div class="auth-options">
+                    <a href="#" id="go-forgot">Esqueci minha senha</a>
+                    <p>Não tem conta? <a href="#" id="go-register">Criar conta</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="register-screen" class="screen hidden">
+            <div class="card-glass">
+                <div class="card-header">
+                    <i class="fa-solid fa-circle-user fa-3x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h2>Criar Conta</h2>
+                    <p>Faça parte da nossa comunidade.</p>
+                </div>
+                
+                <form id="register-form">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user icon"></i>
+                        <input type="text" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-envelope icon"></i>
+                        <input type="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock icon"></i>
+                        <input type="password" placeholder="Senha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Cadastrar</button>
+                </form>
+                <div class="auth-options">
+                    <a href="#" class="go-login">Voltar para o Login</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="forgot-screen" class="screen hidden">
+            <div class="card-glass">
+                <div class="card-header">
+                    <i class="fa-solid fa-key fa-3x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h2>Recuperar</h2>
+                    <p>Enviaremos um link para o seu e-mail.</p>
+                </div>
+                <form id="forgot-form">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-paper-plane icon"></i>
+                        <input type="email" placeholder="Seu e-mail" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar link</button>
+                </form>
+                <div class="auth-options">
+                    <a href="#" class="go-login">Voltar para o Login</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
