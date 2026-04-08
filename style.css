@@ -217,3 +217,46 @@ p { font-size: 1rem; color: #94a3b8; text-align: center; margin-bottom: 1.5rem; 
     .app-wrapper { max-width: 480px; }
     .card-glass { padding: 3.5rem; }
 }
+
+/* Estilo do ícone de ver senha */
+.toggle-password {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b;
+    z-index: 10;
+}
+.toggle-password:hover { color: var(--primary); }
+
+/* Validação Visual */
+input:invalid:not(:placeholder-shown) { border-color: var(--error) !important; }
+input:valid:not(:placeholder-shown) { border-color: var(--success) !important; }
+
+/* Dashboard Grid */
+.dashboard-card { max-width: 500px !important; }
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 1.5rem 0;
+}
+.dest-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 15px 10px;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+}
+.dest-item:hover { background: var(--glass-bg); transform: translateY(-3px); border-color: var(--primary); }
+.dest-item i { font-size: 1.5rem; color: var(--primary); margin-bottom: 8px; display: block; }
+.dest-item span { font-size: 0.75rem; font-weight: 600; }
+
+.logout-style {
+    margin-top: 1rem;
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
