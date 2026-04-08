@@ -114,27 +114,81 @@
         </section>
 
         <section id="dashboard-screen" class="screen hidden">
-            <div class="card-glass dashboard-card">
-                <div class="card-header">
-                    <span class="badge">Área do Viajante</span>
-                    <h2 id="welcome-user">Olá!</h2>
-                    <p>Para onde vamos hoje?</p>
-                </div>
-                <div class="destinations-grid">
-                    <div class="dest-item">
-                        <i class="fa-solid fa-mountain-sun"></i>
-                        <span>Alpes Suíços</span>
+            <div class="site-container">
+                
+                <aside class="sidebar-glass">
+                    <div class="brand">
+                        <img src="globo.png" alt="Logo" class="mini-logo">
+                        <span>Secret Travel</span>
                     </div>
-                    <div class="dest-item">
-                        <i class="fa-solid fa-umbrella-beach"></i>
-                        <span>Maldivas</span>
-                    </div>
-                    <div class="dest-item">
-                        <i class="fa-solid fa-torii-gate"></i>
-                        <span>Kyoto</span>
-                    </div>
-                </div>
-                <button type="button" id="logout-btn" class="btn-primary logout-style">Sair da Conta</button>
+                    <nav class="side-nav">
+                        <a href="#" class="active"><i class="fa-solid fa-house"></i> Início</a>
+                        <a href="#"><i class="fa-solid fa-compass"></i> Explorar</a>
+                        <a href="#"><i class="fa-solid fa-heart"></i> Favoritos</a>
+                        <a href="#"><i class="fa-solid fa-ticket"></i> Reservas</a>
+                        <a href="#"><i class="fa-solid fa-gear"></i> Ajustes</a>
+                    </nav>
+                    <button type="button" id="logout-btn" class="btn-logout-side">
+                        <i class="fa-solid fa-right-from-bracket"></i> Sair
+                    </button>
+                </aside>
+        
+                <main class="main-content">
+                    <header class="content-header">
+                        <div>
+                            <h2 id="welcome-user">Olá, Viajante!</h2>
+                            <p>Qual será sua próxima aventura?</p>
+                        </div>
+                        <div class="search-box-site">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Pesquisar destinos...">
+                        </div>
+                    </header>
+        
+                    <section class="destinations-section">
+                        <div class="section-title">
+                            <h3>Destinos em Destaque</h3>
+                            <div class="filters">
+                                <span class="badge active">Tudo</span>
+                                <span class="badge">Europa</span>
+                                <span class="badge">Ásia</span>
+                            </div>
+                        </div>
+        
+                        <div class="site-grid">
+                            <div class="travel-card-site">
+                                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=500')">
+                                    <span class="tag">R$ 4.200</span>
+                                </div>
+                                <div class="card-details">
+                                    <h4>Paris, França</h4>
+                                    <p>A cidade das luzes espera por você.</p>
+                                    <button class="btn-sm">Detalhes</button>
+                                </div>
+                            </div>
+                            <div class="travel-card-site">
+                                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500')">
+                                    <span class="tag">R$ 8.500</span>
+                                </div>
+                                <div class="card-details">
+                                    <h4>Dubai, EAU</h4>
+                                    <p>Luxo e arquitetura futurista.</p>
+                                    <button class="btn-sm">Detalhes</button>
+                                </div>
+                            </div>
+                            <div class="travel-card-site">
+                                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500')">
+                                    <span class="tag">R$ 3.900</span>
+                                </div>
+                                <div class="card-details">
+                                    <h4>Kyoto, Japão</h4>
+                                    <p>Tradição e paz entre as cerejeiras.</p>
+                                    <button class="btn-sm">Detalhes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
             </div>
         </section>
     </main>
