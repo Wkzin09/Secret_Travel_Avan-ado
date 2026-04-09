@@ -163,4 +163,69 @@ document.addEventListener("DOMContentLoaded", () => {
             setBtnState(btnSave, 'reset', "Salvar Nova Senha");
         }, 1500);
     });
+
+    // FUNCIONALIDADE EXTRA: Pesquisa de Destinos
+    const searchInput = document.querySelector('.search-box-site input');
+    
+    if(searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.travel-card-site');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h4').innerText.toLowerCase();
+                const desc = card.querySelector('p').innerText.toLowerCase();
+                
+                if(title.includes(term) || desc.includes(term)) {
+                    card.style.display = "block";
+                    card.classList.add('fade-in');
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    }
+
+    // Feedback visual nos filtros (badges)
+    const badges = document.querySelectorAll('.destinations-section .badge');
+    badges.forEach(badge => {
+        badge.addEventListener('click', function() {
+            badges.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            // Aqui você poderia adicionar uma lógica de filtro por continente
+        });
+    });
+
+    // --- FUNCIONALIDADE DE PESQUISA NO DASHBOARD ---
+    const search_Input = document.querySelector('.search-box-site input');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.travel-card-site');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h4').innerText.toLowerCase();
+                const description = card.querySelector('p').innerText.toLowerCase();
+                
+                // Se o termo estiver no título ou na descrição, mostra o card
+                if (title.includes(term) || description.includes(term)) {
+                    card.style.display = "block";
+                    card.style.animation = "fadeIn 0.4s ease forwards";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    }
+
+    // --- FEEDBACK NOS FILTROS (BADGES) ---
+    const filterBadges = document.querySelectorAll('.destinations-section .badge');
+    filterBadges.forEach(badge => {
+        badge.addEventListener('click', function() {
+            filterBadges.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            // Aqui você poderia implementar filtros por categoria no futuro
+        });
+    });
 });
