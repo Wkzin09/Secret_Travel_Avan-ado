@@ -16,25 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const getUsers = () => JSON.parse(localStorage.getItem('st_users')) || [
         { name: 'Admin User', email: 'admin@teste.com', password: '123456' }
     ];
-
-    // --- FUNCIONALIDADE DOS BOTÕES DE DETALHES ---
-    const detailsButtons = document.querySelectorAll('.btn-sm');
-
-    detailsButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            // Pega o card pai do botão clicado
-            const card = e.target.closest('.travel-card-site');
-            const destino = card.querySelector('h4').innerText;
-            const preco = card.querySelector('.tag').innerText;
-
-            // Exemplo de ação: um alerta simples (ou você pode abrir um modal)
-            alert(`Você selecionou: ${destino}\nPreço: ${preco}\nRedirecionando para detalhes...`);
-
-            // Se quiser navegar para uma tela de detalhes específica:
-            // window.location.href = 'detalhes.html'; 
-        });
-    });
-
+    
     const saveUser = (user) => {
         const users = getUsers();
         users.push(user);
@@ -62,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Lógica Ver Senha
     document.querySelectorAll('.toggle-password').forEach(eye => {
-        eye.addEventListener('click', function () {
+        eye.addEventListener('click', function() {
             const input = document.getElementById(this.getAttribute('data-target'));
             const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
             input.setAttribute('type', type);
@@ -139,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const step1 = document.getElementById('forgot-step-1');
     const step2 = document.getElementById('forgot-step-2');
     const btnSave = document.getElementById('btn-save-pass');
-    let userEmailReset = "";
+    let userEmailReset = ""; 
 
     forgotForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -184,8 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // FUNCIONALIDADE EXTRA: Pesquisa de Destinos
     const searchInput = document.querySelector('.search-box-site input');
-
-    if (searchInput) {
+    
+    if(searchInput) {
         searchInput.addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const cards = document.querySelectorAll('.travel-card-site');
@@ -193,8 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
             cards.forEach(card => {
                 const title = card.querySelector('h4').innerText.toLowerCase();
                 const desc = card.querySelector('p').innerText.toLowerCase();
-
-                if (title.includes(term) || desc.includes(term)) {
+                
+                if(title.includes(term) || desc.includes(term)) {
                     card.style.display = "block";
                     card.classList.add('fade-in');
                 } else {
@@ -207,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Feedback visual nos filtros (badges)
     const badges = document.querySelectorAll('.destinations-section .badge');
     badges.forEach(badge => {
-        badge.addEventListener('click', function () {
+        badge.addEventListener('click', function() {
             badges.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             // Aqui você poderia adicionar uma lógica de filtro por continente
@@ -216,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- FUNCIONALIDADE DE PESQUISA NO DASHBOARD ---
     const search_Input = document.querySelector('.search-box-site input');
-
+    
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
@@ -225,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cards.forEach(card => {
                 const title = card.querySelector('h4').innerText.toLowerCase();
                 const description = card.querySelector('p').innerText.toLowerCase();
-
+                
                 // Se o termo estiver no título ou na descrição, mostra o card
                 if (title.includes(term) || description.includes(term)) {
                     card.style.display = "block";
@@ -240,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- FEEDBACK NOS FILTROS (BADGES) ---
     const filterBadges = document.querySelectorAll('.destinations-section .badge');
     filterBadges.forEach(badge => {
-        badge.addEventListener('click', function () {
+        badge.addEventListener('click', function() {
             filterBadges.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             // Aqui você poderia implementar filtros por categoria no futuro
